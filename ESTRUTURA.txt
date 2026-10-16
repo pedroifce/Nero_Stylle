@@ -1,0 +1,17 @@
+loja-roupas-profissional/
+
+├── index.html
+├── detalhes.html
+├── autor.html
+├── css/
+│   └── site.css
+├── imagens/
+│   ├── logo-nero.png          (logo enviada)
+│   ├── camiseta-nero.jpg      (foto enviada da camiseta)
+│   └── shorts.svg             (ilustração provisória)
+└── admin/
+    ├── index.html             (login demonstrativo)
+    ├── objetos.html           (cadastro/listagem demonstrativos)
+    ├── usuarios.html          (cadastro/listagem demonstrativos)
+    └── css/
+        └── admin.css

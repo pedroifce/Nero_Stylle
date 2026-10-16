@@ -1,0 +1,50 @@
+NERO STYLLE — PROJETO COMPLETO
+Desenvolvimento Web I | HTML + CSS
+
+ESTRUTURA DO PROJETO
+
+index.html                 Página pública inicial e catálogo
+ detalhes.html             Página de detalhes do produto
+ autor.html                Página sobre o autor
+ css/site.css              Estilos públicos da loja
+ imagens/                  Logo Nero Stylle, foto da camiseta e ilustração provisória de shorts
+ admin/index.html          Login demonstrativo da administração
+ admin/objetos.html        Cadastro e tabela de objetos tema
+ admin/usuarios.html       Cadastro e tabela de usuários
+ admin/css/admin.css       Estilos da área administrativa
+
+COMO ABRIR NO NOTEPAD++
+1. Extraia o ZIP para uma pasta chamada loja-roupas-profissional.
+2. Abra o Notepad++ e edite os arquivos HTML/CSS necessários.
+3. Dê dois cliques em index.html para abrir o site no navegador.
+4. Na navegação, use Admin para abrir a área administrativa e os subitens.
+5. Salve no Notepad++ com Ctrl+S e atualize o navegador com Ctrl+F5.
+
+COMO SUBSTITUIR/ATUALIZAR O PROJETO NO GITHUB
+1. Faça uma cópia de segurança da pasta original do repositório.
+2. Extraia os arquivos do ZIP.
+3. Copie a estrutura do projeto para a pasta local do repositório pedroifce/loja-roupas, mantendo exatamente os nomes e subpastas.
+4. Este pacote inclui o logo enviado (imagens/logo-nero.png) e a foto enviada da camiseta (imagens/camiseta-nero.jpg). A foto é usada no destaque, nas camisetas da coleção e na página de detalhes. A ilustração de shorts continua provisória porque não foi enviada uma foto desse produto. Ao adicionar novas imagens, atualize os respectivos atributos src nos arquivos HTML.
+5. Envie os arquivos novos/alterados para a branch main e faça commit.
+6. Após a publicação do GitHub Pages, teste a página inicial, os detalhes do produto, sobre o autor, Admin e os subitens do menu.
+
+REQUISITOS VISUAIS IMPLEMENTADOS
+- Página pública da loja, detalhes do produto e sobre o autor.
+- Menu Admin com links para login, cadastro de objetos tema e cadastro de usuários.
+- As páginas administrativas incluem cabeçalho com o título Área de Administração, links para as outras páginas administrativas e para a página inicial, e rodapé com nome do autor e link para Sobre o autor.
+- Formulários de cadastro/edição e tabelas de objetos e usuários, com ações Editar e Apagar.
+- Layout responsivo, paleta profissional, animações CSS e estados de hover/foco.
+
+IMPORTANTE SOBRE HTML E CSS
+Esta atividade foi construída somente com HTML e CSS, conforme a restrição informada. Os registros das tabelas são exemplos estáticos; os botões Editar e Apagar não alteram os dados. O login encaminha para a página de objetos apenas para demonstrar a navegação, sem verificar credenciais. Para autenticação real ou operações de cadastro/edição/exclusão funcionais seria necessária lógica adicional em JavaScript e/ou processamento no servidor.
+
+NOTA DE PRIVACIDADE
+Os registros exibidos são fictícios e usados apenas para demonstração acadêmica. Não use senhas reais.
+
+
+IDENTIDADE VISUAL ATUALIZADA
+- Nome da loja: Nero Stylle.
+- Rodapés: Autor: Pedro Henrique.
+- O logo oficial enviado pelo autor está aplicado no cabeçalho público e administrativo e no rodapé público.
+- A foto real da camiseta foi aplicada ao destaque e às páginas de camiseta.
+- A imagem de shorts segue como ilustração provisória, aguardando uma foto específica.
