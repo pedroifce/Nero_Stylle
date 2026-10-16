@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b1020">
+    <title>Usuários | Área de Administração</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-body">
+    <header class="admin-header">
+        <a class="admin-brand" href="../index.html" aria-label="Nero Stylle - voltar à loja"><img class="admin-logo" src="../imagens/logo-nero.png" alt="Nero Stylle"></a>
+        <div class="admin-header-title"><span class="header-overline">SISTEMA DE GESTÃO</span><h1>Área de Administração</h1></div>
+        <a class="return-link" href="../index.html"><span aria-hidden="true">←</span> Voltar à loja</a>
+    </header>
+    <nav class="admin-nav" aria-label="Menu da administração">
+        <a class="admin-nav-link" href="index.html">Login</a>
+        <a class="admin-nav-link" href="objetos.html">Objetos tema</a>
+        <a class="admin-nav-link active" href="usuarios.html">Usuários</a>
+        <a class="admin-nav-link nav-back" href="../index.html">Página inicial ↗</a>
+    </nav>
+
+    <main class="admin-main">
+        <section class="page-heading">
+            <div><p class="admin-eyebrow">ACESSOS / GERENCIAMENTO</p><h2>Usuários<span>.</span></h2><p>Organize os dados de acesso e os perfis cadastrados.</p></div>
+            <div class="page-chip"><span class="status-dot"></span> GESTÃO DE USUÁRIOS</div>
+        </section>
+
+        <section class="metric-grid" aria-label="Resumo ilustrativo">
+            <article class="metric-card"><span class="metric-icon metric-blue">US</span><div><p>Total de usuários</p><strong>02</strong><small>Registros de exemplo</small></div></article>
+            <article class="metric-card"><span class="metric-icon metric-green">AT</span><div><p>Usuários ativos</p><strong>01</strong><small>Exemplo ilustrativo</small></div></article>
+            <article class="metric-card"><span class="metric-icon metric-purple">PF</span><div><p>Perfis de acesso</p><strong>02</strong><small>Administrador e padrão</small></div></article>
+        </section>
+
+        <section class="admin-panel" id="formulario">
+            <div class="panel-heading"><div><span class="panel-kicker">01 / FORMULÁRIO</span><h3>Dados do usuário</h3><p>Preencha os campos para representar o cadastro ou a edição de um usuário.</p></div><span class="panel-index">USUÁRIO</span></div>
+            <form class="admin-form" action="#formulario" method="get">
+                <div class="form-grid">
+                    <div class="field-group"><label for="usuario-nome">Nome completo <span>*</span></label><input id="usuario-nome" name="nome" type="text" placeholder="Nome do usuário" required></div>
+                    <div class="field-group"><label for="usuario-email">E-mail <span>*</span></label><input id="usuario-email" name="email" type="email" placeholder="usuario@exemplo.com" required></div>
+                    <div class="field-group"><label for="usuario-perfil">Perfil de acesso <span>*</span></label><select id="usuario-perfil" name="perfil" required><option value="">Selecione um perfil</option><option>Administrador</option><option>Gerente</option><option>Usuário padrão</option></select></div>
+                    <div class="field-group"><label for="usuario-situacao">Situação <span>*</span></label><select id="usuario-situacao" name="situacao" required><option value="">Selecione a situação</option><option>Ativo</option><option>Inativo</option></select></div>
+                    <div class="field-group"><label for="usuario-senha">Senha provisória</label><input id="usuario-senha" name="senha" type="password" placeholder="Apenas para demonstração" autocomplete="new-password"></div>
+                    <div class="field-group field-full"><label for="usuario-observacao">Observações</label><textarea id="usuario-observacao" name="observacao" rows="3" placeholder="Observações sobre o usuário (opcional)"></textarea></div>
+                </div>
+                <div class="form-actions"><button class="button button-quiet" type="reset">Limpar campos</button><button class="button button-primary" type="button">Salvar usuário <span aria-hidden="true">→</span></button></div>
+            </form>
+        </section>
+
+        <section class="admin-panel" id="lista">
+            <div class="panel-heading table-heading"><div><span class="panel-kicker">02 / LISTAGEM</span><h3>Usuários cadastrados</h3><p>Dados fictícios utilizados apenas para demonstrar a tabela.</p></div><span class="record-count">02 registros</span></div>
+            <div class="table-wrap"><table class="data-table"><thead><tr><th>ID</th><th>Nome</th><th>E-mail</th><th>Perfil</th><th>Situação</th><th>Ações</th></tr></thead><tbody>
+                <tr><td><span class="table-id">#001</span></td><td><div class="object-cell"><span class="user-avatar avatar-indigo">PH</span><span><strong>Pedro Henrique</strong><small>Administrador do sistema</small></span></div></td><td>pedro@exemplo.com</td><td><span class="category-pill">Administrador</span></td><td><span class="status-pill status-active"><span></span>Ativo</span></td><td><div class="row-actions"><a class="action-button action-edit" href="#formulario">Editar</a><button class="action-button action-delete" type="button">Apagar</button></div></td></tr>
+                <tr><td><span class="table-id">#002</span></td><td><div class="object-cell"><span class="user-avatar avatar-rose">MO</span><span><strong>Maria Oliveira</strong><small>Usuária padrão</small></span></div></td><td>maria@exemplo.com</td><td><span class="category-pill">Usuário padrão</span></td><td><span class="status-pill status-inactive"><span></span>Inativo</span></td><td><div class="row-actions"><a class="action-button action-edit" href="#formulario">Editar</a><button class="action-button action-delete" type="button">Apagar</button></div></td></tr>
+            </tbody></table></div>
+            <p class="static-notice">Observação: os registros são estáticos. Os botões representam as ações solicitadas, mas não alteram nem removem dados sem JavaScript ou uma aplicação de servidor.</p>
+        </section>
+    </main>
+
+    <footer class="admin-footer"><span>© 2026 · ÁREA DE ADMINISTRAÇÃO</span><span>Autor: Pedro Henrique</span><a href="../autor.html">Sobre o autor ↗</a></footer>
+</body>
+</html>
