@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b1020">
+    <title>Objetos Tema | Área de Administração</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-body">
+    <header class="admin-header">
+        <a class="admin-brand" href="../index.html" aria-label="Nero Stylle - voltar à loja"><img class="admin-logo" src="../imagens/logo-nero.png" alt="Nero Stylle"></a>
+        <div class="admin-header-title"><span class="header-overline">SISTEMA DE GESTÃO</span><h1>Área de Administração</h1></div>
+        <a class="return-link" href="../index.html"><span aria-hidden="true">←</span> Voltar à loja</a>
+    </header>
+    <nav class="admin-nav" aria-label="Menu da administração">
+        <a class="admin-nav-link" href="index.html">Login</a>
+        <a class="admin-nav-link active" href="objetos.html">Objetos tema</a>
+        <a class="admin-nav-link" href="usuarios.html">Usuários</a>
+        <a class="admin-nav-link nav-back" href="../index.html">Página inicial ↗</a>
+    </nav>
+
+    <main class="admin-main">
+        <section class="page-heading">
+            <div><p class="admin-eyebrow">CATÁLOGO / GERENCIAMENTO</p><h2>Objetos tema<span>.</span></h2><p>Cadastre, consulte e organize os objetos da loja.</p></div>
+            <div class="page-chip"><span class="status-dot"></span> ÁREA DE CADASTRO</div>
+        </section>
+
+        <section class="metric-grid" aria-label="Resumo ilustrativo">
+            <article class="metric-card"><span class="metric-icon metric-blue">OT</span><div><p>Total de objetos</p><strong>02</strong><small>Registros de exemplo</small></div></article>
+            <article class="metric-card"><span class="metric-icon metric-purple">CT</span><div><p>Categorias</p><strong>01</strong><small>Representação ilustrativa</small></div></article>
+            <article class="metric-card"><span class="metric-icon metric-green">OK</span><div><p>Estrutura</p><strong>HTML + CSS</strong><small>Interface demonstrativa</small></div></article>
+        </section>
+
+        <section class="admin-panel" id="formulario">
+            <div class="panel-heading"><div><span class="panel-kicker">01 / FORMULÁRIO</span><h3>Dados do objeto</h3><p>Preencha os campos para representar o cadastro ou a edição de um objeto.</p></div><span class="panel-index">OBJETO TEMA</span></div>
+            <form class="admin-form" action="#formulario" method="get">
+                <div class="form-grid">
+                    <div class="field-group"><label for="objeto-nome">Nome do objeto <span>*</span></label><input id="objeto-nome" name="nome" type="text" placeholder="Ex.: Camiseta Essential" required></div>
+                    <div class="field-group"><label for="objeto-categoria">Categoria <span>*</span></label><select id="objeto-categoria" name="categoria" required><option value="">Selecione uma categoria</option><option>Camisetas</option><option>Calças</option><option>Bermudas e shorts</option><option>Acessórios</option></select></div>
+                    <div class="field-group"><label for="objeto-preco">Preço (R$) <span>*</span></label><input id="objeto-preco" name="preco" type="number" min="0" step="0.01" placeholder="89,90" required></div>
+                    <div class="field-group"><label for="objeto-estoque">Quantidade em estoque <span>*</span></label><input id="objeto-estoque" name="estoque" type="number" min="0" step="1" placeholder="25" required></div>
+                    <div class="field-group field-full"><label for="objeto-descricao">Descrição</label><textarea id="objeto-descricao" name="descricao" rows="3" placeholder="Informe as características do objeto tema..."></textarea></div>
+                </div>
+                <div class="form-actions"><button class="button button-quiet" type="reset">Limpar campos</button><button class="button button-primary" type="button">Salvar objeto <span aria-hidden="true">→</span></button></div>
+            </form>
+        </section>
+
+        <section class="admin-panel" id="lista">
+            <div class="panel-heading table-heading"><div><span class="panel-kicker">02 / LISTAGEM</span><h3>Objetos cadastrados</h3><p>Registros fictícios usados para demonstrar a estrutura solicitada.</p></div><span class="record-count">02 registros</span></div>
+            <div class="table-wrap"><table class="data-table"><thead><tr><th>ID</th><th>Objeto</th><th>Categoria</th><th>Preço</th><th>Estoque</th><th>Ações</th></tr></thead><tbody>
+                <tr><td><span class="table-id">#001</span></td><td><div class="object-cell"><span class="item-thumb thumb-shirt">CE</span><span><strong>Camiseta Essential</strong><small>Atualizado como exemplo</small></span></div></td><td><span class="category-pill">Camisetas</span></td><td>R$ 89,90</td><td><span class="stock-dot"></span> 25 un.</td><td><div class="row-actions"><a class="action-button action-edit" href="#formulario">Editar</a><button class="action-button action-delete" type="button">Apagar</button></div></td></tr>
+                <tr><td><span class="table-id">#002</span></td><td><div class="object-cell"><span class="item-thumb thumb-shirt">CP</span><span><strong>Camiseta Premium</strong><small>Atualizado como exemplo</small></span></div></td><td><span class="category-pill">Camisetas</span></td><td>R$ 109,90</td><td><span class="stock-dot"></span> 12 un.</td><td><div class="row-actions"><a class="action-button action-edit" href="#formulario">Editar</a><button class="action-button action-delete" type="button">Apagar</button></div></td></tr>
+            </tbody></table></div>
+            <p class="static-notice">Observação: a tabela é estática. Os botões ilustram as ações de edição e exclusão, mas não alteram os registros sem JavaScript ou uma aplicação de servidor.</p>
+        </section>
+    </main>
+
+    <footer class="admin-footer"><span>© 2026 · ÁREA DE ADMINISTRAÇÃO</span><span>Autor: Pedro Henrique</span><a href="../autor.html">Sobre o autor ↗</a></footer>
+</body>
+</html>

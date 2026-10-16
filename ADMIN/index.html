@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b1020">
+    <title>Login | Área de Administração</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-body login-body">
+    <header class="admin-header">
+        <a class="admin-brand" href="../index.html" aria-label="Nero Stylle - voltar à loja"><img class="admin-logo" src="../imagens/logo-nero.png" alt="Nero Stylle"></a>
+        <div class="admin-header-title"><span class="header-overline">SISTEMA DE GESTÃO</span><h1>Área de Administração</h1></div>
+        <a class="return-link" href="../index.html"><span aria-hidden="true">←</span> Voltar à loja</a>
+    </header>
+
+    <nav class="admin-nav" aria-label="Menu da administração">
+        <a class="admin-nav-link active" href="index.html">Login</a>
+        <a class="admin-nav-link" href="objetos.html">Objetos tema</a>
+        <a class="admin-nav-link" href="usuarios.html">Usuários</a>
+        <a class="admin-nav-link nav-back" href="../index.html">Página inicial ↗</a>
+    </nav>
+
+    <main class="login-main">
+        <section class="login-promo">
+            <p class="admin-eyebrow"><span class="status-dot"></span> AMBIENTE ADMINISTRATIVO</p>
+            <h2>Organização para<br><span>ir mais longe.</span></h2>
+            <p>Gerencie os objetos tema e os usuários da loja em uma interface centralizada, clara e consistente.</p>
+            <div class="promo-features">
+                <div><span class="feature-number">01</span><span><strong>Objetos tema</strong><small>Cadastro e listagem de itens</small></span></div>
+                <div><span class="feature-number">02</span><span><strong>Usuários</strong><small>Organização dos acessos</small></span></div>
+            </div>
+            <div class="promo-orbit orbit-a"></div><div class="promo-orbit orbit-b"></div>
+        </section>
+
+        <section class="login-card">
+            <div class="card-icon">N</div>
+            <p class="admin-eyebrow">ACESSO AO SISTEMA</p>
+            <h2>Bem-vindo de volta<span>.</span></h2>
+            <p class="login-helper">Preencha os campos abaixo para continuar.</p>
+            <form class="admin-form" action="objetos.html" method="get">
+                <div class="field-group">
+                    <label for="login-email">E-mail</label>
+                    <input type="email" id="login-email" placeholder="nome@empresa.com" autocomplete="username" required>
+                </div>
+                <div class="field-group">
+                    <label for="login-password">Senha</label>
+                    <input type="password" id="login-password" placeholder="Digite sua senha" autocomplete="current-password" required>
+                </div>
+                <button class="button button-primary button-full" type="submit">Entrar no painel <span aria-hidden="true">→</span></button>
+                <p class="demo-note"><span aria-hidden="true">ⓘ</span> Interface acadêmica demonstrativa. Não use credenciais reais.</p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="admin-footer">
+        <span>© 2026 · ÁREA DE ADMINISTRAÇÃO</span>
+        <span>Autor: Pedro Henrique</span>
+        <a href="../autor.html">Sobre o autor ↗</a>
+    </footer>
+</body>
+</html>
