@@ -1,0 +1,1510 @@
+
+/* =========================================
+   NERO STYLLE
+   DESENVOLVIMENTO WEB I
+   MOBILE FIRST
+   ========================================= */
+
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+
+/* =========================================
+   1. VARIAVEIS DO PROJETO
+   ========================================= */
+
+:root {
+    /* CORES */
+    --ink: #171717;
+    --paper: #f4f1eb;
+    --white: #fffdfa;
+    --muted: #77736d;
+    --line: #ddd8cf;
+    --accent: #b8fb5b;
+    --dark: #121212;
+
+    /* TIPOGRAFIA */
+    --font-body: 'DM Sans', Arial, sans-serif;
+    --font-heading: 'Manrope', Arial, sans-serif;
+
+    /* ESPACAMENTOS */
+    --space-small: 12px;
+    --space-medium: 24px;
+    --space-large: 40px;
+
+    /* BORDAS */
+    --radius: 18px;
+    --border: 1px solid var(--line);
+}
+
+
+/* =========================================
+   2. CONFIGURACOES GERAIS
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+}
+
+
+/* =========================================
+   3. CABECALHO E NAVEGACAO
+   ========================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: var(--space-small);
+    min-height: 75px;
+    padding: 12px 20px;
+
+    background: rgba(244, 241, 235, 0.96);
+    border-bottom: var(--border);
+    backdrop-filter: blur(18px);
+}
+
+.site-brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    font-family: var(--font-heading);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1.8px;
+    white-space: nowrap;
+}
+
+.site-brand strong,
+.footer-brand strong {
+    font-weight: 800;
+}
+
+.site-logo {
+    display: block;
+    width: 106px;
+    height: 45px;
+    object-fit: contain;
+    border-radius: 3px;
+    transition: transform .22s ease;
+}
+
+.site-brand:hover .site-logo {
+    transform: scale(1.025);
+}
+
+/* BOTAO ABRIR MENU */
+
+.menu-open {
+    display: grid;
+    place-items: center;
+
+    width: 42px;
+    height: 42px;
+
+    border: var(--border);
+    border-radius: 10px;
+
+    background: var(--white);
+    color: var(--ink);
+
+    font-size: 25px;
+    line-height: 1;
+
+    transition: background .2s, color .2s;
+}
+
+.menu-open:hover {
+    background: var(--ink);
+    color: var(--accent);
+}
+
+/* MENU ESCONDIDO INICIALMENTE */
+
+.site-nav {
+    display: none;
+
+    width: 100%;
+    order: 3;
+
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 0;
+    padding: 10px 0 15px;
+
+    background: var(--paper);
+    border-top: var(--border);
+}
+
+/* ABRIR MENU COM CSS */
+
+.site-nav:target {
+    display: flex;
+}
+
+/* BOTAO FECHAR */
+
+.menu-close {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    padding: 8px 12px;
+
+    color: var(--ink);
+    font-size: 27px;
+    font-weight: 700;
+}
+
+/* ESCONDER BOTAO ABRIR QUANDO O MENU ESTIVER ABERTO */
+
+.site-nav:target ~ .menu-open {
+    display: none;
+}
+
+/* LINKS DA NAVEGACAO */
+
+.nav-link {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    width: 100%;
+    min-height: 45px;
+    padding: 12px;
+
+    color: #5f5b55;
+    font-size: 12px;
+    font-weight: 600;
+
+    border-bottom: var(--border);
+
+    transition: color .2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--ink);
+}
+
+.nav-link.active:after {
+    display: none;
+}
+
+.nav-admin {
+    justify-content: space-between;
+    border: 1px solid #c9c4ba;
+    border-radius: 10px;
+}
+
+.nav-admin:hover {
+    background: var(--ink);
+    color: var(--accent);
+    border-color: var(--ink);
+}
+
+.chevron {
+    font-size: 16px;
+    line-height: 1;
+}
+
+/* MENU ADMINISTRATIVO */
+
+.nav-dropdown {
+    position: relative;
+
+    display: block;
+    width: 100%;
+}
+
+.dropdown-menu {
+    display: grid;
+
+    width: 100%;
+    padding: 10px;
+
+    border: var(--border);
+    border-radius: 13px;
+
+    background: var(--white);
+}
+
+.dropdown-heading {
+    padding: 9px 10px 10px;
+
+    color: #8b857b;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.dropdown-menu a {
+    padding: 11px 10px;
+    border-radius: 7px;
+
+    color: #38352f;
+    font-size: 12px;
+
+    transition: background .2s, color .2s;
+}
+
+.dropdown-menu a:hover {
+    background: #f0eee8;
+    color: #111;
+}
+
+
+/* =========================================
+   4. PAGINA INICIAL - APRESENTACAO
+   ========================================= */
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: var(--space-large);
+    min-height: auto;
+
+    padding: 36px 20px 45px;
+
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-copy {
+    max-width: 560px;
+    animation: riseIn .7s ease both;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin: 0 0 22px;
+
+    color: #716d64;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.65px;
+}
+
+.eyebrow span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #8bbb40;
+}
+
+.hero h1,
+.author-hero h1 {
+    margin: 0;
+
+    font-family: var(--font-heading);
+    font-size: clamp(45px, 12vw, 70px);
+    font-weight: 700;
+
+    letter-spacing: -3px;
+    line-height: .99;
+}
+
+.hero h1 em,
+.detail-content h1 em,
+.author-hero h1 em {
+    color: #858076;
+    font-style: normal;
+}
+
+.hero-description {
+    max-width: 420px;
+    margin: 18px 0 28px;
+
+    color: #68645d;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-medium);
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 26px;
+
+    min-height: 48px;
+    padding: 0 19px;
+
+    border-radius: 100px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition: transform .22s, background .22s,
+                color .22s, box-shadow .22s;
+}
+
+.button span {
+    font-size: 17px;
+    transition: transform .22s;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, .12);
+}
+
+.button:hover span {
+    transform: translate(2px, -2px);
+}
+
+.button-dark {
+    background: var(--ink);
+    color: white;
+}
+
+.button-dark:hover {
+    background: #2d2d2a;
+    color: var(--accent);
+}
+
+.text-link {
+    padding-bottom: 4px;
+    border-bottom: 1px solid #aaa49a;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition: border-color .2s, color .2s;
+}
+
+.text-link:hover {
+    border-color: var(--ink);
+    color: #626056;
+}
+
+.hero-caption {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 31px;
+
+    color: #777166;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.caption-line {
+    width: 32px;
+    height: 1px;
+    background: #a8a196;
+}
+
+/* IMAGEM PRINCIPAL */
+
+.hero-visual {
+    position: relative;
+    isolation: isolate;
+
+    display: grid;
+    place-items: center;
+
+    min-height: 360px;
+
+    background: #d9d5cc;
+    overflow: hidden;
+
+    animation: riseIn .8s .1s ease both;
+}
+
+.hero-visual:before {
+    position: absolute;
+    inset: 0;
+
+    z-index: -1;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255,255,255,.28),
+        transparent 45%,
+        rgba(0,0,0,.09)
+    );
+
+    content: '';
+}
+
+.hero-visual img {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center 25%;
+
+    filter: none;
+
+    transition: transform .55s cubic-bezier(.2,.7,.2,1);
+}
+
+.hero-visual:hover img {
+    transform: scale(1.035);
+}
+
+.hero-orbit {
+    position: absolute;
+
+    border: 1px solid rgba(255,255,255,.65);
+    border-radius: 50%;
+
+    aspect-ratio: 1;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.orbit-one {
+    width: 75%;
+    top: 12%;
+    left: 12%;
+}
+
+.orbit-two {
+    width: 93%;
+    top: 3%;
+    left: 3%;
+    border-color: rgba(26,26,26,.10);
+}
+
+.hero-label {
+    position: absolute;
+    z-index: 2;
+
+    left: 25px;
+    top: 25px;
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    line-height: 1.6;
+}
+
+.hero-label span {
+    color: #666057;
+    font-size: 9px;
+}
+
+.hero-stamp {
+    position: absolute;
+    z-index: 2;
+
+    right: 22px;
+    top: 30%;
+
+    display: grid;
+    place-items: center;
+
+    width: 68px;
+    height: 68px;
+
+    border-radius: 50%;
+    background: var(--accent);
+    color: #1b1b17;
+
+    text-align: center;
+    font-size: 9px;
+    font-weight: 800;
+    line-height: 1.35;
+
+    transform: rotate(8deg);
+}
+
+.hero-bottom-note {
+    position: absolute;
+    z-index: 2;
+
+    bottom: 19px;
+    left: 24px;
+    right: 24px;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: #5d5951;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+
+/* =========================================
+   5. COLECAO E PRODUTOS
+   ========================================= */
+
+.collection-section {
+    padding: 55px 20px 60px;
+    background: var(--white);
+}
+
+.section-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 12px;
+    margin-bottom: 34px;
+}
+
+.section-heading .eyebrow {
+    margin-bottom: 12px;
+}
+
+.section-heading h2 {
+    margin: 0;
+
+    font-family: var(--font-heading);
+    font-size: clamp(28px, 3.4vw, 42px);
+    letter-spacing: -1.9px;
+}
+
+.section-heading h2 span {
+    color: #95bc54;
+}
+
+.section-note {
+    margin: 0;
+    color: #807b71;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 35px;
+}
+
+.product-card {
+    min-width: 0;
+    animation: riseIn .55s ease both;
+}
+
+.product-card:nth-child(2) {
+    animation-delay: .08s;
+}
+
+.product-card:nth-child(3) {
+    animation-delay: .16s;
+}
+
+.product-image {
+    position: relative;
+
+    display: grid;
+    place-items: center;
+
+    aspect-ratio: 4 / 3.8;
+    overflow: hidden;
+
+    border-radius: var(--radius);
+    background: #e7e3dc;
+}
+
+.product-image-dark {
+    background: #d8d7d2;
+}
+
+.product-image-sand {
+    background: #e7dfd1;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center 25%;
+
+    transition: transform .45s ease;
+}
+
+.product-image:hover img {
+    transform: scale(1.06);
+}
+
+.product-badge {
+    position: absolute;
+    z-index: 2;
+
+    top: 14px;
+    left: 14px;
+
+    padding: 7px 9px;
+
+    background: var(--accent);
+    color: #1e2118;
+
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: .9px;
+}
+
+.badge-light {
+    background: #f6f3ed;
+}
+
+.image-action {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+
+    display: grid;
+    place-items: center;
+
+    width: 37px;
+    height: 37px;
+
+    border-radius: 50%;
+    background: #f8f6f0;
+    color: #181818;
+
+    font-size: 19px;
+
+    transition: transform .2s, background .2s;
+}
+
+.product-image:hover .image-action {
+    transform: rotate(45deg);
+    background: var(--accent);
+}
+
+.product-meta {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 10px;
+    margin-top: 17px;
+
+    color: #77736b;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .8px;
+}
+
+.product-card h3 {
+    margin: 8px 0 4px;
+
+    font-family: var(--font-heading);
+    font-size: 17px;
+    letter-spacing: -.4px;
+}
+
+.product-card p {
+    margin: 0;
+    color: #7c776f;
+    font-size: 12px;
+}
+
+.product-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 17px;
+    padding-bottom: 5px;
+
+    border-bottom: 1px solid #c4beb3;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.product-link span {
+    transition: transform .2s;
+}
+
+.product-link:hover span {
+    transform: translateX(4px);
+}
+
+
+/* =========================================
+   6. FAIXA EDITORIAL
+   ========================================= */
+
+.editorial-strip {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    gap: var(--space-small);
+    padding: 25px 20px;
+
+    background: var(--accent);
+    color: #1b1b17;
+}
+
+.editorial-number {
+    font-family: var(--font-heading);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.editorial-strip p {
+    margin: 0;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1.6px;
+}
+
+.editorial-line {
+    flex: 1;
+    height: 1px;
+    background: rgba(27,27,23,.35);
+}
+
+.editorial-small {
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+
+/* =========================================
+   7. RODAPE
+   ========================================= */
+
+.site-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    gap: 12px 18px;
+    padding: 24px 20px;
+
+    background: #151515;
+    color: #c6c2ba;
+}
+
+.footer-brand {
+    color: #fff;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+}
+
+.footer-logo {
+    display: block;
+    width: 96px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 3px;
+}
+
+.footer-brand strong {
+    color: var(--accent);
+}
+
+.site-footer p {
+    width: 100%;
+    order: 2;
+
+    margin: 0;
+    color: #97938b;
+    font-size: 10px;
+}
+
+.site-footer > a:not(.footer-brand) {
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.site-footer > a:not(.footer-brand):hover {
+    color: var(--accent);
+}
+
+.site-footer > a span {
+    padding-left: 4px;
+}
+
+.footer-copy {
+    margin-left: auto;
+
+    color: #77736b;
+    font-size: 8px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   8. PAGINA DE DETALHES DO PRODUTO
+   ========================================= */
+
+.detail-main {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 24px 20px 55px;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    margin: 0 0 25px;
+
+    color: #77736b;
+    font-size: 10px;
+}
+
+.breadcrumb a {
+    font-weight: 700;
+}
+
+.breadcrumb a:hover {
+    color: #111;
+}
+
+.detail-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+
+    align-items: center;
+}
+
+.detail-image-wrap {
+    position: relative;
+
+    display: grid;
+    place-items: center;
+
+    min-height: 360px;
+
+    overflow: hidden;
+    border-radius: var(--radius);
+
+    background: #e3dfd6;
+}
+
+.detail-image-wrap:after {
+    position: absolute;
+
+    width: 80%;
+    aspect-ratio: 1;
+
+    border: 1px solid rgba(255,255,255,.8);
+    border-radius: 50%;
+
+    content: '';
+}
+
+.detail-image-wrap img {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center 25%;
+
+    transition: transform .4s;
+}
+
+.detail-image-wrap:hover img {
+    transform: scale(1.04);
+}
+
+.detail-image-tag,
+.detail-image-index {
+    position: absolute;
+    z-index: 2;
+
+    color: #5f5b53;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.detail-image-tag {
+    top: 22px;
+    left: 22px;
+}
+
+.detail-image-index {
+    right: 22px;
+    bottom: 22px;
+}
+
+.detail-content .eyebrow {
+    margin-bottom: 17px;
+}
+
+.detail-content h1 {
+    margin: 0;
+
+    font-family: var(--font-heading);
+    font-size: 53px;
+    line-height: 1.02;
+    letter-spacing: -3.5px;
+}
+
+.detail-price {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 12px;
+    margin: 24px 0;
+
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.detail-price span {
+    padding: 5px 8px;
+
+    border: var(--border);
+    border-radius: 4px;
+
+    font-family: var(--font-body);
+    font-size: 9px;
+    font-weight: 600;
+
+    color: var(--muted);
+}
+
+.detail-rule {
+    width: 100%;
+    height: 1px;
+    background: #d6d0c6;
+}
+
+.detail-description {
+    margin: 23px 0;
+
+    color: #716c63;
+    font-size: 13px;
+    line-height: 1.95;
+}
+
+.detail-facts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 17px;
+    margin: 27px 0 30px;
+}
+
+.detail-facts > div {
+    display: flex;
+    gap: 11px;
+    align-items: flex-start;
+}
+
+.detail-facts > div > span {
+    color: #8d887e;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.detail-facts p {
+    margin: 0;
+}
+
+.detail-facts strong,
+.detail-facts small {
+    display: block;
+}
+
+.detail-facts strong {
+    font-size: 11px;
+}
+
+.detail-facts small {
+    margin-top: 4px;
+    color: #77736b;
+    font-size: 10px;
+}
+
+.detail-button {
+    min-width: 210px;
+}
+
+.detail-disclaimer {
+    margin: 17px 0 0;
+    color: #898379;
+    font-size: 9px;
+}
+
+
+/* =========================================
+   9. PAGINA SOBRE O AUTOR
+   ========================================= */
+
+.author-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 20px 60px;
+}
+
+.author-hero {
+    padding-bottom: 35px;
+    border-bottom: var(--border);
+}
+
+.author-hero h1 {
+    font-size: clamp(40px, 10vw, 58px);
+    letter-spacing: -3px;
+}
+
+.author-lead {
+    max-width: 440px;
+    margin: 25px 0 0;
+
+    color: #77736b;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.author-card {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+    align-items: start;
+
+    margin-top: 35px;
+    padding: 22px;
+
+    background: var(--white);
+    border: var(--border);
+    border-radius: var(--radius);
+}
+
+.author-photo {
+    width: 100%;
+    max-width: 180px;
+
+    aspect-ratio: 1;
+
+    overflow: hidden;
+    border: 3px solid #fff;
+    border-radius: 50%;
+
+    background: #e5e0d7;
+    box-shadow: 0 8px 24px rgba(0,0,0,.10);
+}
+
+.author-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center 55%;
+}
+
+.author-copy .eyebrow {
+    margin-bottom: 12px;
+}
+
+.author-copy h2 {
+    margin: 0 0 18px;
+
+    font-family: var(--font-heading);
+    font-size: clamp(22px, 3vw, 32px);
+    letter-spacing: -1px;
+}
+
+.author-copy p:not(.eyebrow) {
+    max-width: 700px;
+
+    color: #706b63;
+    font-size: 13px;
+    line-height: 2;
+}
+
+.author-back {
+    display: inline-flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+
+/* =========================================
+   10. ANIMACOES
+   ========================================= */
+
+@keyframes riseIn {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes dropdownIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   11. TABLETS E COMPUTADORES
+   ========================================= */
+
+@media (min-width: 768px) {
+
+    /* CABECALHO */
+
+    .site-header {
+        height: 82px;
+        min-height: 82px;
+
+        flex-wrap: nowrap;
+
+        padding: 0 clamp(22px, 5.5vw, 84px);
+        gap: 28px;
+    }
+
+    .menu-open,
+    .menu-close {
+        display: none !important;
+    }
+
+    .site-nav,
+    .site-nav:target {
+        display: flex;
+
+        width: auto;
+        height: 100%;
+
+        order: 0;
+
+        flex-direction: row;
+        align-items: center;
+
+        gap: clamp(12px, 2.4vw, 34px);
+        padding: 0;
+
+        border: none;
+    }
+
+    .nav-link {
+        width: auto;
+        height: 100%;
+        min-height: 0;
+
+        padding: 0;
+        border: none;
+
+        font-size: 12px;
+    }
+
+    .nav-link.active:after {
+        position: absolute;
+
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        display: block;
+
+        height: 3px;
+
+        background: var(--ink);
+        content: '';
+    }
+
+    .nav-admin {
+        height: 38px;
+        padding: 0 14px;
+        border: 1px solid #c9c4ba;
+        border-radius: 100px;
+    }
+
+    .nav-dropdown {
+        display: flex;
+        width: auto;
+        height: 100%;
+        align-items: center;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+
+        top: calc(100% - 7px);
+        right: 0;
+
+        display: none;
+
+        width: 242px;
+
+        box-shadow: 0 18px 50px rgba(26,22,14,.15);
+    }
+
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu {
+        display: grid;
+        animation: dropdownIn .18s ease both;
+    }
+
+    /* PAGINA INICIAL */
+
+    .hero {
+        grid-template-columns: minmax(0,.94fr) minmax(360px,1.06fr);
+
+        min-height: 550px;
+
+        padding: 55px clamp(22px, 7.2vw, 108px) 62px;
+
+        gap: clamp(35px, 7vw, 100px);
+    }
+
+    .hero h1 {
+        font-size: clamp(48px, 6.3vw, 86px);
+        letter-spacing: -5px;
+    }
+
+    .hero-description {
+        margin: 25px 0 28px;
+    }
+
+    .hero-caption {
+        margin-top: 59px;
+    }
+
+    .hero-visual {
+        min-height: 490px;
+    }
+
+    .hero-stamp {
+        width: 78px;
+        height: 78px;
+        font-size: 10px;
+    }
+
+    /* COLECAO */
+
+    .collection-section {
+        padding: 78px clamp(22px, 7.2vw, 108px) 88px;
+    }
+
+    .section-heading {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 25px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--space-medium);
+    }
+
+    .product-image {
+        aspect-ratio: 4 / 4.6;
+    }
+
+    /* FAIXA EDITORIAL */
+
+    .editorial-strip {
+        flex-wrap: nowrap;
+        gap: 22px;
+        padding: 25px clamp(22px, 7.2vw, 108px);
+    }
+
+    .editorial-strip p {
+        font-size: 10px;
+    }
+
+    .editorial-small {
+        font-size: 9px;
+    }
+
+    /* RODAPE */
+
+    .site-footer {
+        flex-wrap: nowrap;
+        gap: 25px;
+        padding: 26px clamp(22px, 5.5vw, 84px);
+    }
+
+    .site-footer p {
+        width: auto;
+        order: 0;
+        margin-right: auto;
+    }
+
+    .footer-logo {
+        width: 104px;
+        height: 44px;
+    }
+
+    /* DETALHES */
+
+    .detail-main {
+        padding: 35px clamp(22px, 7vw, 92px) 85px;
+    }
+
+    .detail-layout {
+        grid-template-columns: minmax(0, 1.05fr) minmax(300px, .95fr);
+        gap: clamp(35px, 7vw, 95px);
+    }
+
+    .detail-image-wrap {
+        min-height: 550px;
+    }
+
+    .detail-content h1 {
+        font-size: clamp(47px, 5vw, 67px);
+    }
+
+    /* AUTOR */
+
+    .author-main {
+        padding: 70px clamp(22px, 7vw, 100px) 95px;
+    }
+
+    .author-hero {
+        padding-bottom: 42px;
+    }
+
+    .author-hero h1 {
+        font-size: clamp(45px, 6vw, 76px);
+        letter-spacing: -5px;
+    }
+
+    .author-card {
+        grid-template-columns: 190px 1fr;
+
+        gap: clamp(28px, 6vw, 75px);
+
+        margin-top: 43px;
+        padding: 35px;
+    }
+}
+
+
+/* =========================================
+   12. TELAS MENORES
+   ========================================= */
+
+@media (max-width: 380px) {
+
+    .site-header {
+        padding-right: 14px;
+        padding-left: 14px;
+    }
+
+    .hero {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+        letter-spacing: -2px;
+    }
+
+    .hero-visual {
+        min-height: 310px;
+    }
+
+    .collection-section {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .detail-facts {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================
+   13. ACESSIBILIDADE
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
